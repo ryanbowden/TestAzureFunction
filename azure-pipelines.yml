@@ -55,6 +55,7 @@ steps:
     testSelector: 'testAssemblies'
     testAssemblyVer2: |
       **\*Tests.dll
+      !**\obj\**
       !**\*testadapter.dll
       !**\obj\**'
     vsTestVersion: 'toolsInstaller'
