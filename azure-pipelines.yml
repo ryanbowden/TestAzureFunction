@@ -28,8 +28,9 @@ steps:
   inputs:
     command: 'publish'
     publishWebProjects: false
-    modifyOutputPath: false
+    modifyOutputPath: true
     zipAfterPublish: false
+    projects: '*.csproj'
     arguments: '--no-restore --configuration Release --output ../publish_output'
 
 - task: PowerShell@2
@@ -53,7 +54,7 @@ steps:
 - task: VSTest@2
   inputs:
     testSelector: 'testAssemblies'
-    testAssemblyVer2: |
+    testAssemblyVer2: '
       **\*Tests.dll
       !**\obj\**
       !**\*testadapter.dll
