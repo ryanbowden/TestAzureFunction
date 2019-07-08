@@ -30,7 +30,7 @@ steps:
     publishWebProjects: false
     modifyOutputPath: false
     zipAfterPublish: false
-    arguments: '--no-restore --configuration Release --output ../publish_output --self-contained'
+    arguments: '--no-restore --configuration Release --output ../publish_output'
 
 - task: PowerShell@2
   inputs:
@@ -55,6 +55,7 @@ steps:
     testSelector: 'testAssemblies'
     testAssemblyVer2: |
       **\*Tests.dll
+      !**\obj\**
       !**\*testadapter.dll
       !**\obj\**'
     vsTestVersion: 'toolsInstaller'
