@@ -30,7 +30,7 @@ steps:
     publishWebProjects: false
     modifyOutputPath: true
     zipAfterPublish: false
-    projects: '*.csproj'
+    projects: '**/*.csproj'
     arguments: '--no-restore --configuration Release --output ../publish_output'
 
 - task: PowerShell@2
