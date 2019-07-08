@@ -53,10 +53,9 @@ steps:
   inputs:
     testSelector: 'testAssemblies'
     testAssemblyVer2: '
-      **\*Tests.dll
+      **\*tests*.dll
       !**\obj\**
-      !**\*testadapter.dll
-      !**\obj\**'
+      !**\*testadapter.dll'
     vsTestVersion: 'toolsInstaller'
    
 - task: PublishTestResults@2
