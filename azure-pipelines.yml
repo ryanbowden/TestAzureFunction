@@ -53,7 +53,8 @@ steps:
   inputs:
     testSelector: 'testAssemblies'
     testAssemblyVer2: '
-      **\*Tests.dll
+      $(System.DefaultWorkingDirectory)\publish_output\*test*.dll
+      $(System.DefaultWorkingDirectory)\publish_output\**\*test*.dll
       !**\obj\**
       !**\*testadapter.dll'
     vsTestVersion: 'toolsInstaller'
