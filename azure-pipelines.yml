@@ -25,6 +25,13 @@ steps:
     projects: '**/*.csproj'
 
 - task: DotNetCoreCLI@2
+  displayName: Run Unit Tests
+  inputs:
+    command: test
+    projects: '**/*Tests/*.csproj'
+    arguments: '--configuration Release'
+
+- task: DotNetCoreCLI@2
   inputs:
     command: 'publish'
     publishWebProjects: false
@@ -48,16 +55,6 @@ steps:
   inputs:
     packageFeedSelector: 'nugetOrg'
     versionSelector: 'latestPreRelease'
-
-- task: VSTest@2
-  inputs:
-    testSelector: 'testAssemblies'
-    testAssemblyVer2: '
-      $(System.DefaultWorkingDirectory)\publish_output\*test*.dll
-      $(System.DefaultWorkingDirectory)\publish_output\**\*test*.dll
-      !**\obj\**
-      !**\*testadapter.dll'
-    vsTestVersion: 'toolsInstaller'
    
 - task: PublishTestResults@2
   inputs:
