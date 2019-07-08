@@ -53,7 +53,7 @@ steps:
   inputs:
     testSelector: 'testAssemblies'
     testAssemblyVer2: '
-      **\*tests*.dll
+      **\*Tests.dll
       !**\obj\**
       !**\*testadapter.dll'
     vsTestVersion: 'toolsInstaller'
