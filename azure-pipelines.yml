@@ -42,8 +42,6 @@ steps:
   inputs:
     targetType: 'inline'
     script: 'cd ''.\publish_output'';
-      ls;
-      cd ''.\bin'';
       ls'
 
 - task: VisualStudioTestPlatformInstaller@1
