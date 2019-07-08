@@ -54,10 +54,9 @@ steps:
   inputs:
     testSelector: 'testAssemblies'
     testAssemblyVer2: |
-      **\*Tests*.dll
+      **\*Tests.dll
       !**\*testadapter.dll
       !**\obj\**'
-    searchFolder: '$(System.DefaultWorkingDirectory)/publish_output'
     vsTestVersion: 'toolsInstaller'
    
 - task: PublishTestResults@2
